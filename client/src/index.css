@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-canvas: #FBF9F6;
+  --color-navy: #202940;
+  --color-bronze: #8B6240;
+  --color-emerald: #1DA851;
+  --color-terracotta: #C94C3D;
+  --color-border: rgba(32, 41, 64, 0.12);
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-navy);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+/* Custom visible scrollbar for all scrollable containers */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(139, 98, 64, 0.3) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(32, 41, 64, 0.04);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 98, 64, 0.25);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 98, 64, 0.45);
+}
+
+/* Inline Editable Focus States */
+.inline-editable-hover {
+  transition: all 0.15s ease-in-out;
+  cursor: text;
+}
+
+.inline-editable-hover:hover {
+  outline: 2px dashed rgba(139, 98, 64, 0.4);
+  outline-offset: 4px;
+  border-radius: 4px;
+  background-color: rgba(139, 98, 64, 0.03);
+}
+
+.inline-editable-active {
+  outline: 2px solid #8B6240 !important;
+  outline-offset: 4px !important;
+  border-radius: 4px !important;
+  background-color: rgba(139, 98, 64, 0.05) !important;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(32, 41, 64, 0.08);
+}

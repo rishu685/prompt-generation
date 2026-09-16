@@ -2,8 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import { SectionLayout } from './types.js';
 
-// Safe path resolution across Node.js runtime and Netlify serverless environment
-const DATA_DIR = path.resolve(process.cwd(), 'server/data');
+// Safe path resolution whether running from root or server directory
+const baseDir = process.cwd().endsWith('server') ? process.cwd() : path.join(process.cwd(), 'server');
+const DATA_DIR = path.resolve(baseDir, 'data');
 const DATA_FILE = path.join(DATA_DIR, 'sections.json');
 
 // In-memory cache fallback
